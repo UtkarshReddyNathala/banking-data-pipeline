@@ -1,4 +1,4 @@
-# 🏦 Banking Modern Data Stack
+#  Banking Modern Data Stack
 
 ![Snowflake](https://img.shields.io/badge/Snowflake-29B5E8?logo=snowflake&logoColor=white)
 ![DBT](https://img.shields.io/badge/dbt-FF694B?logo=dbt&logoColor=white)
@@ -12,15 +12,15 @@
 
 ---
 
-## 📌 Project Overview
+##  Project Overview
 This project demonstrates an **end-to-end modern data stack pipeline** for a **Banking domain**.  
 We simulate **customer, account, and transaction data**, stream changes in real time, transform them into analytics-ready models, and visualize insights — following **best practices of CI/CD and data warehousing**.
 
-👉 Think of it as a **real-world banking data ecosystem** built on modern data tools.  
+ 
 
 ---
 
-## 🏗️ Architecture  
+##  Architecture  
 
 <img width="5647" height="3107" alt="Architecture" src="https://github.com/user-attachments/assets/7521ea8a-451e-46ff-9db0-71dd6ddf8181" />
 
@@ -35,7 +35,7 @@ We simulate **customer, account, and transaction data**, stream changes in real 
 
 ---
 
-## ⚡ Tech Stack
+##  Tech Stack
 - **Snowflake** → Cloud Data Warehouse  
 - **DBT** → Transformations, testing, snapshots (SCD Type-2)  
 - **Apache Airflow** → Orchestration & DAG scheduling  
@@ -48,7 +48,7 @@ We simulate **customer, account, and transaction data**, stream changes in real 
 
 ---
 
-## ✅ Key Features
+##  Key Features
 - **PostgreSQL OLTP**: Source relational database with ACID guarantees (customers, accounts, transactions)  
 - **Simulated banking system**: customers, accounts, and transactions  
 - **Change Data Capture (CDC)** via Kafka + Debezium (capturing Postgres WAL)  
@@ -59,7 +59,7 @@ We simulate **customer, account, and transaction data**, stream changes in real 
 
 ---
 
-## 📂 Repository Structure
+##  Repository Structure
 ```text
 banking-modern-datastack/
 ├── .github/workflows/         # CI/CD pipelines (ci.yml, cd.yml)
@@ -89,57 +89,247 @@ banking-modern-datastack/
 
 ---
 
-## ⚙️ Step-by-Step Implementation  
+##  Step-by-Step Implementation  
 
-### **1. Data Simulation**  
-- Generated synthetic banking data (**customers, accounts, transactions**) using **Faker**.  
-- Inserted data into **PostgreSQL (OLTP)** so the system behaves like a real transactional database (**ACID, constraints**).  
-- Controlled generation via `config.yaml`.  
+1️⃣ Data Simulation – Banking OLTP System
+Purpose
 
----
+Simulate a real-world transactional banking system.
 
-### **2. Kafka + Debezium CDC**  
-- Set up **Kafka Connect & Debezium** to capture changes from **Postgres**.  
-- Streamed **CDC events** into **MinIO**.  
+1.1 Synthetic Data Generation
 
----
+Generated synthetic banking datasets using Faker
 
-### **3. Airflow Orchestration**  
-- Built DAGs to:  
-  - Ingest **MinIO data → Snowflake (Bronze)**.  
-  - Schedule **snapshots & incremental loads**.  
+customers
 
----
+accounts
 
-### **4. Snowflake Warehouse**  
-- Organized into **Bronze → Silver → Gold layers**.  
-- Created **staging schemas** for ingestion.  
+transactions
 
----
+Inserted into PostgreSQL (OLTP) system
 
-### **5. DBT Transformations**  
-- **Staging models** → cleaned source data.  
-- **Dimension & fact models** → built marts.  
-- **Snapshots** → tracked history of accounts & customers.  
+Maintained relational integrity (foreign keys, constraints)
 
----
+Configurable generation via config.yaml
 
-### **6. CI/CD with GitHub Actions**  
-- **ci.yml** → Lint, dbt compile, run tests.  
-- **cd.yml** → Deploy DAGs & dbt models on merge.  
+1.2 Problems Addressed
+Challenge	Solution
+No real production data	Synthetic generation using Faker
+Need realistic relationships	Foreign key constraints
+Controlled testing volume	Config-driven generation
+OLTP simulation	PostgreSQL transactional database
 
----
+Postgres acts as a real banking transactional system.
 
-## 📊 Final Deliverables  
-- **Automated CDC pipeline** from Postgres → Snowflake  
-- **DBT models** (facts, dimensions, snapshots)  
-- **Orchestrated DAGs in Airflow**  
-- **Synthetic banking dataset** for demos  
-- **CI/CD workflows** ensuring reliability  
+2️⃣ Change Data Capture – Kafka + Debezium
+Purpose
+
+Capture real-time database changes without polling.
+
+2.1 CDC Implementation
+
+Configured Kafka Connect
+
+Deployed Debezium Postgres Connector
+
+Captured:
+
+INSERT
+
+UPDATE
+
+DELETE
+
+Published events to Kafka topics:
+
+customers
+
+accounts
+
+transactions
+
+2.2 Streaming to Data Lake
+
+Python Kafka Consumer:
+
+Extracted after payload
+
+Buffered records (batch size = 50)
+
+Converted to Parquet
+
+Uploaded to MinIO (S3-compatible storage)
+
+2.3 Problems Addressed
+Challenge	Solution
+Database polling inefficiency	Log-based CDC
+High data latency	Event streaming
+Small file problem	Batch buffering
+Complex Debezium JSON	Payload extraction
+Storage scalability	S3-compatible MinIO
+Analytics inefficiency	Columnar Parquet format
+
+This establishes the Raw Lake (Bronze equivalent) layer.
+
+3️⃣ Airflow Orchestration
+Purpose
+
+Automate and manage pipeline execution.
+
+3.1 DAG Responsibilities
+
+Ingest MinIO Parquet → Snowflake (Bronze schema)
+
+Trigger dbt transformations
+
+Manage task dependencies
+
+Schedule incremental loads
+
+Retry failed tasks
+
+3.2 Problems Addressed
+Challenge	Solution
+Manual execution	Scheduled DAGs
+Dependency mismanagement	Directed Acyclic Graph
+Silent pipeline failures	Retry & logging
+Lack of visibility	Airflow monitoring UI
+
+Airflow acts as the orchestration layer.
+
+4️⃣ Snowflake Cloud Data Warehouse
+Purpose
+
+Store scalable, analytics-ready datasets.
+
+4.1 Layered Architecture
+Bronze
+
+Raw ingestion from MinIO
+
+Minimal transformation
+
+Silver
+
+Cleaned & standardized datasets
+
+Deduplicated records using ROW_NUMBER()
+
+Type casting & null handling
+
+Gold
+
+Fact & Dimension models
+
+Analytics-ready marts
+
+4.2 Problems Addressed
+Challenge	Solution
+Raw unstructured ingestion	Bronze staging schema
+Duplicate change records	Window-based deduplication
+Dirty attributes	Silver cleansing logic
+Business analytics need	Gold dimensional modeling
+Scalability limits	Elastic Snowflake warehouse
+
+Snowflake provides elastic compute & storage separation.
+
+5️⃣ DBT Transformation Framework
+Purpose
+
+Apply structured, version-controlled transformations.
+
+5.1 Implementation
+
+Source definitions for raw Snowflake tables
+
+Staging models:
+
+Type casting
+
+Deduplication
+
+Latest-record filtering
+
+Dimension models:
+
+dim_customers
+
+dim_accounts
+
+Fact models:
+
+fact_transactions
+
+Snapshots:
+
+Track historical changes (accounts & customers)
+
+5.2 Problems Addressed
+Challenge	Solution
+Manual SQL management	dbt version-controlled models
+No historical tracking	Snapshots
+Duplicate CDC records	ROW_NUMBER filtering
+Schema drift	Explicit casting
+Lack of lineage	dbt dependency graph
+
+dbt enforces transformation governance.
+
+6️⃣ CI/CD with GitHub Actions
+Purpose
+
+Ensure reliability and production-readiness.
+
+6.1 CI Pipeline (ci.yml)
+
+Trigger on push / pull request
+
+Setup Python
+
+Install dependencies
+
+Linting (Ruff)
+
+Unit tests (Pytest)
+
+dbt compile validation
+
+6.2 CD Pipeline (cd.yml)
+
+Deploy Airflow DAGs
+
+Deploy dbt models
+
+Validate Snowflake connection
+
+6.3 Problems Addressed
+Challenge	Solution
+Broken commits	Automated validation
+SQL syntax errors	dbt compile
+Deployment risk	Controlled CI/CD
+Code quality issues	Linting enforcement
+
+CI/CD ensures pipeline stability.
+
+📦 Final Deliverables
+
+-Automated CDC pipeline (Postgres → Kafka → MinIO → Snowflake)
+
+-Structured Lakehouse architecture (Bronze → Silver → Gold)
+
+-dbt transformation framework (staging, marts, snapshots)
+
+-Airflow DAG orchestration
+
+-Synthetic banking dataset for simulation
+
+-Containerized infrastructure (Docker)
+
+-CI/CD workflows for reliability
 
 ---
 
 **Author**: *Jaya Chandra Kadiveti*  
 **LinkedIn**: [jayachandrakadiveti](https://www.linkedin.com/in/jayachandrakadiveti/)  
 **Contact**: [datawithjay1@gmail.com](mailto:datawithjay1@gmail.com)  
+
 
