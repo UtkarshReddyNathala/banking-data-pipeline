@@ -324,9 +324,9 @@ CI/CD ensures pipeline stability.
 
 ---
 
-## Analytics Powerbi Dashbaord
+### Analytics Powerbi Dashbaord
 
-![PowerBI Dashboard](banking_dbt/dashboard%20analysis.png)
+![PowerBI Dashboard](banking-data-pipeline/Powerbi_Dashbaord.png)
 
 
 
@@ -390,6 +390,7 @@ This dashboard provides a comprehensive overview of the bank’s customer base, 
 The dashboard highlights that the bank has a **diverse and active customer base** with well-distributed transaction types and notable high-value clients. Leveraging this data can drive **customer retention, operational efficiency, and targeted growth strategies**. Continuous monitoring of transaction patterns and account activity will enable proactive decision-making for business success.
 
 ---
+
 
 
 
