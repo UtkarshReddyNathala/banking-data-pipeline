@@ -4,7 +4,7 @@
 ---
 
 ##  Project Overview
-This project demonstrates an **end-to-end modern data stack pipeline** for a **Banking domain**.  
+This project is an **end-to-end modern real time data stack pipeline** for a **Banking domain**.  
 We simulate **customer, account, and transaction data**, stream changes in real time, transform them into analytics-ready models, and visualize insights — following **best practices of CI/CD and data warehousing**.
 
 ---
@@ -326,7 +326,7 @@ CI/CD ensures pipeline stability.
 
 Final Dashboard – Banking Analytics Insights
 
-[Powerbi Dashboard](docs/dashboard analysis.png)
+[Powerbi Dashboard](banking_dbt/dashboard analysis.png)
 
 
 ---
@@ -389,6 +389,7 @@ This dashboard provides a comprehensive overview of the bank’s customer base, 
 The dashboard highlights that the bank has a **diverse and active customer base** with well-distributed transaction types and notable high-value clients. Leveraging this data can drive **customer retention, operational efficiency, and targeted growth strategies**. Continuous monitoring of transaction patterns and account activity will enable proactive decision-making for business success.
 
 ---
+
 
 
 
