@@ -326,12 +326,72 @@ CI/CD ensures pipeline stability.
 
 Final Dashboard – Banking Analytics Insights
 
+[Powerbi Dashboard](docs/dashboard analysis.png)
+
+
+---
+
+# Banking Business Insights Report
+
+## Executive Summary
+
+This dashboard provides a comprehensive overview of the bank’s customer base, account activity, and transaction volumes. It offers actionable insights for business managers and decision-makers to understand customer behavior, monitor account activity, and optimize banking operations. The dashboard aggregates data across **198 customers**, **400 accounts**, and **1050 transactions**, highlighting trends in customer and account-level engagement.
+
+---
+
+## Key Metrics
+
+| Metric                   | Value   | Insight                                                  |
+| ------------------------ | ------- | -------------------------------------------------------- |
+| Total Customers          | 198     | The bank currently serves 198 unique customers.          |
+| Total Accounts           | 400     | Each customer holds, on average, 2 accounts.             |
+| Total Transactions       | 1050    | Indicates active customer engagement across accounts.    |
+| Average Balance          | $515.24 | Provides an overview of typical customer deposit levels. |
+| Total Transaction Amount | $541.9K | Represents total monetary movement across all accounts.  |
+
+---
+
+## Analysis
+
+### 1. Transaction Distribution by Type
+
+* **Deposit, Withdrawal, Transfer** amounts are fairly evenly distributed:
+
+  * Highest: $186.48K (34.41%)
+  * Medium: $178.45K (32.93%)
+  * Lowest: $176.97K (32.66%)
+* Insight: The bank maintains a balanced transactional mix, reducing dependency on a single transaction type.
+
+### 2. High-Value Customers
+
+* Top 10 customers contribute significantly to total transaction value, ranging from **$4K to $6K** per customer.
+* Insight: Identifying these customers allows the bank to target premium services, loyalty programs, and personalized offers.
+
+### 3. High-Activity Accounts
+
+* Certain accounts, such as Account_ID 143, 209, and 324, dominate transaction volumes.
+* Insight: These accounts may belong to business clients or high-net-worth individuals, signaling the need for dedicated account management.
+
+---
+
+## Business Insights
+
+1. **Customer Segmentation:** High-value customers can be targeted with personalized banking products to increase retention and cross-selling opportunities.
+2. **Resource Allocation:** Bank operations can prioritize support for high-transaction accounts, improving service efficiency and customer satisfaction.
+3. **Risk Management:** Balanced transaction types reduce exposure to liquidity risks from a single transaction type.
+4. **Strategic Marketing:** Average balance and transaction volumes provide baseline metrics for marketing campaigns, promotions, and savings plans.
+5. **Growth Opportunities:** Customers with fewer transactions may benefit from engagement programs to encourage higher activity and adoption of new services.
+
+---
+
+## Conclusion
+
+The dashboard highlights that the bank has a **diverse and active customer base** with well-distributed transaction types and notable high-value clients. Leveraging this data can drive **customer retention, operational efficiency, and targeted growth strategies**. Continuous monitoring of transaction patterns and account activity will enable proactive decision-making for business success.
 
 ---
 
 
 
----
 
 
 
