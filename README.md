@@ -139,7 +139,7 @@ banking-modern-datastack/
 
 ---
 
-**PowerBi Dashbaord**
+**Powerbi Dashbaord**
 
 ![Power BI Dashboard](Powerbi_Dashboard.png)
 
@@ -150,6 +150,7 @@ banking-modern-datastack/
 **Linkedin**: https://www.linkedin.com/in/utkarsh-reddy-nathala-b5b56728a/
 
 **Contact**:utkarshnathala@gmail.com, 8977011784
+
 
 
 
