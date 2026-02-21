@@ -145,7 +145,8 @@ banking-modern-datastack/
 
 ---
 
-**Author**: *Jaya Chandra Kadiveti*  
-**LinkedIn**: [jayachandrakadiveti](https://www.linkedin.com/in/jayachandrakadiveti/)  
-**Contact**: [datawithjay1@gmail.com](mailto:datawithjay1@gmail.com)  
+**Author**: Utkarsh Reddy Nathala
+**Linkedin**: https://www.linkedin.com/in/utkarsh-reddy-nathala-b5b56728a/
+**Contact**:utkarshnathala@gmail.com, 8977011784
+
 
