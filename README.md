@@ -139,6 +139,13 @@ banking-modern-datastack/
 
 ---
 
+**PowerBi Dashbaord**
+
+![Power BI Dashboard](Powerbi_Dashboard.png)
+
+---
+
 **Author**: *Jaya Chandra Kadiveti*  
 **LinkedIn**: [jayachandrakadiveti](https://www.linkedin.com/in/jayachandrakadiveti/)  
 **Contact**: [datawithjay1@gmail.com](mailto:datawithjay1@gmail.com)  
+
