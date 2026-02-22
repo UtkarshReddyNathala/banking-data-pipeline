@@ -12,17 +12,15 @@
 
 ---
 
-##  Project Overview
+## Project Overview
 
-• Built a **Change Data Capture (CDC)** pipeline using **Apache Kafka**, **Kafka Connect**, and **Debezium** to capture live changes from **PostgreSQL** and stream incremental data into an **S3-compatible data lake (MinIO)** for **real-time data ingestion**.
+• Built a real-time **streaming data pipeline** using **Change Data Capture (CDC)** with **Apache Kafka**, **Kafka Connect**, and **Debezium** to capture live changes from **PostgreSQL** and stream incremental data into an **S3-compatible data lake (MinIO)**.
 
-• Developed a **Snowflake** cloud data warehouse following **Medallion architecture (Bronze → Silver → Gold)**, implementing **dbt** staging models, **fact and dimension tables**, **incremental transformations**, and **SCD Type-2 snapshots** for historical tracking.
+• Developed a **Snowflake** cloud data warehouse following **Medallion architecture (Bronze → Silver → Gold)**, implementing **dbt** staging models, **fact and dimension tables**, **incremental transformations**, and **Slowly Changing Dimensions (SCD Type-2)** for historical tracking.
 
-• Orchestrated end-to-end data workflows using **Apache Airflow** and containerized services with **Docker** to ensure reliable, reproducible pipeline execution.
+• Orchestrated end-to-end data workflows using **Apache Airflow** and containerized services with **Docker** to ensure reliable and reproducible pipeline execution.
 
 • Implemented automated **CI/CD pipelines** using **GitHub Actions** for code validation, **dbt compile checks**, and automated **dbt run and test deployments** to **Snowflake**, and built **Power BI dashboards** for business reporting.
-
-
 
 ---
 
@@ -156,6 +154,7 @@ banking-modern-datastack/
 **Linkedin**: https://www.linkedin.com/in/utkarsh-reddy-nathala-b5b56728a/
 
 **Contact**:utkarshnathala@gmail.com, 8977011784
+
 
 
 
