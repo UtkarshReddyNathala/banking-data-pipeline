@@ -12,7 +12,7 @@
 
 ---
 
-## 📌 Project Overview
+##  Project Overview
 
 • Built a **Change Data Capture (CDC)** pipeline using **Apache Kafka**, **Kafka Connect**, and **Debezium** to capture live changes from **PostgreSQL** and stream incremental data into an **S3-compatible data lake (MinIO)** for **real-time data ingestion**.
 
@@ -156,6 +156,7 @@ banking-modern-datastack/
 **Linkedin**: https://www.linkedin.com/in/utkarsh-reddy-nathala-b5b56728a/
 
 **Contact**:utkarshnathala@gmail.com, 8977011784
+
 
 
 
