@@ -13,10 +13,16 @@
 ---
 
 ## 📌 Project Overview
-This project demonstrates an **end-to-end modern data stack pipeline** for a **Banking domain**.  
-We simulate **customer, account, and transaction data**, stream changes in real time, transform them into analytics-ready models, and visualize insights — following **best practices of CI/CD and data warehousing**.
 
-👉 Think of it as a **real-world banking data ecosystem** built on modern data tools.  
+• Built a **Change Data Capture (CDC)** pipeline using **Apache Kafka**, **Kafka Connect**, and **Debezium** to capture live changes from **PostgreSQL** and stream incremental data into an **S3-compatible data lake (MinIO)** for **real-time data ingestion**.
+
+• Developed a **Snowflake** cloud data warehouse following **Medallion architecture (Bronze → Silver → Gold)**, implementing **dbt** staging models, **fact and dimension tables**, **incremental transformations**, and **SCD Type-2 snapshots** for historical tracking.
+
+• Orchestrated end-to-end data workflows using **Apache Airflow** and containerized services with **Docker** to ensure reliable, reproducible pipeline execution.
+
+• Implemented automated **CI/CD pipelines** using **GitHub Actions** for code validation, **dbt compile checks**, and automated **dbt run and test deployments** to **Snowflake**, and built **Power BI dashboards** for business reporting.
+
+
 
 ---
 
@@ -35,7 +41,7 @@ We simulate **customer, account, and transaction data**, stream changes in real 
 
 ---
 
-## ⚡ Tech Stack
+##  Tech Stack
 - **Snowflake** → Cloud Data Warehouse  
 - **DBT** → Transformations, testing, snapshots (SCD Type-2)  
 - **Apache Airflow** → Orchestration & DAG scheduling  
@@ -59,7 +65,7 @@ We simulate **customer, account, and transaction data**, stream changes in real 
 
 ---
 
-## 📂 Repository Structure
+##  Repository Structure
 ```text
 banking-modern-datastack/
 ├── .github/workflows/         # CI/CD pipelines (ci.yml, cd.yml)
@@ -89,7 +95,7 @@ banking-modern-datastack/
 
 ---
 
-## ⚙️ Step-by-Step Implementation  
+##  Step-by-Step Implementation  
 
 ### **1. Data Simulation**  
 - Generated synthetic banking data (**customers, accounts, transactions**) using **Faker**.  
@@ -130,7 +136,7 @@ banking-modern-datastack/
 
 ---
 
-## 📊 Final Deliverables  
+##  Final Deliverables  
 - **Automated CDC pipeline** from Postgres → Snowflake  
 - **DBT models** (facts, dimensions, snapshots)  
 - **Orchestrated DAGs in Airflow**  
@@ -150,6 +156,7 @@ banking-modern-datastack/
 **Linkedin**: https://www.linkedin.com/in/utkarsh-reddy-nathala-b5b56728a/
 
 **Contact**:utkarshnathala@gmail.com, 8977011784
+
 
 
 
