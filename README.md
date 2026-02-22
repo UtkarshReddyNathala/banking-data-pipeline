@@ -24,7 +24,7 @@
 
 ---
 
-## 🏗️ Architecture  
+## Architecture  
 
 <img width="5647" height="3107" alt="Architecture" src="https://github.com/user-attachments/assets/7521ea8a-451e-46ff-9db0-71dd6ddf8181" />
 
@@ -154,6 +154,7 @@ banking-modern-datastack/
 **Linkedin**: https://www.linkedin.com/in/utkarsh-reddy-nathala-b5b56728a/
 
 **Contact**:utkarshnathala@gmail.com, 8977011784
+
 
 
 
